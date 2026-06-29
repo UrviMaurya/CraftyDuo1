@@ -122,7 +122,7 @@
             font-weight: 700;
         }
 
-        /* Updated Hero Section: Full Image Background with Centered Content Alignment */
+        /* Hero Section */
         .hero {
             min-height: 95vh;
             padding: 140px 6% 80px 6%;
@@ -169,7 +169,6 @@
             text-shadow: 0 2px 8px rgba(0,0,0,0.5);
         }
 
-        /* Centered Action Button Containers */
         .hero-buttons {
             display: flex;
             justify-content: center;
@@ -177,7 +176,6 @@
             flex-wrap: wrap;
         }
 
-        /* Pill Buttons Styled with the Rich Warm Gradients */
         .btn {
             background: linear-gradient(90deg, var(--orange-vibrant), var(--terracotta));
             color: var(--text-white);
@@ -234,7 +232,6 @@
             gap: 35px;
         }
 
-        /* Dark Premium Glass Panels */
         .product-card {
             background: var(--glass-panel);
             border: 1px solid var(--glass-border);
@@ -286,41 +283,64 @@
             font-size: 13px;
         }
 
-        /* Custom Custom Space Workspace */
+        /* Custom Order Section[cite: 1] */
         .custom-order-section {
-            background: linear-gradient(150deg, rgba(149, 18, 44, 0.2) 0%, rgba(16, 12, 8, 0.6) 100%);
+            background: linear-gradient(150deg, rgba(149, 18, 44, 0.25) 0%, rgba(16, 12, 8, 0.75) 100%);
             border: 1px solid var(--glass-border);
             backdrop-filter: blur(20px);
             border-radius: 48px;
-            padding: 60px 5%;
+            padding: 60px 6%;
             margin-top: 100px;
         }
 
         .custom-form-container {
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
         }
 
+        .form-subtitle {
+            font-family: 'Lexend', sans-serif;
+            font-size: 18px;
+            color: var(--orange-vibrant);
+            margin: 30px 0 15px 0;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 8px;
+            letter-spacing: -0.01em;
+        }
+
+        .form-subtitle:first-of-type {
+            margin-top: 0;
+        }
+
+        .form-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 10px;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--orange-vibrant);
+            margin-bottom: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--muted-light);
         }
 
-        .form-group input, .form-group textarea, .form-group select {
+        .form-group input[type="text"], 
+        .form-group input[type="email"], 
+        .form-group input[type="number"], 
+        .form-group input[type="date"], 
+        .form-group textarea, 
+        .form-group select {
             width: 100%;
-            padding: 16px 20px;
+            padding: 14px 18px;
             border: 1px solid var(--glass-border);
-            background: rgba(16, 12, 8, 0.5);
-            border-radius: 18px;
+            background: rgba(16, 12, 8, 0.6);
+            border-radius: 14px;
             font-size: 14px;
             color: var(--text-white);
             outline: none;
@@ -329,8 +349,84 @@
 
         .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
             border-color: var(--orange-vibrant);
-            background: rgba(16, 12, 8, 0.8);
-            box-shadow: 0 0 15px rgba(255, 148, 8, 0.15);
+            background: rgba(16, 12, 8, 0.85);
+            box-shadow: 0 0 12px rgba(255, 148, 8, 0.15);
+        }
+
+        /* Option Grids (Radio & Checkbox Blocks)[cite: 1] */
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 12px;
+            margin-top: 5px;
+        }
+
+        .option-card {
+            position: relative;
+            display: block;
+        }
+
+        .option-card input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        .option-label {
+            display: block;
+            background: rgba(16, 12, 8, 0.4);
+            border: 1px solid var(--glass-border);
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 13px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+
+        .option-card input:checked + .option-label {
+            border-color: var(--orange-vibrant);
+            background: rgba(255, 148, 8, 0.1);
+            color: var(--orange-vibrant);
+            font-weight: 600;
+        }
+
+        .other-input-wrap {
+            margin-top: 12px;
+            display: none;
+        }
+
+        /* Checkbox Terms Block[cite: 1] */
+        .terms-container {
+            margin: 30px 0;
+            background: rgba(16, 12, 8, 0.3);
+            padding: 20px;
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .checkbox-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 13px;
+            line-height: 1.5;
+            color: var(--muted-light);
+            cursor: pointer;
+        }
+
+        .checkbox-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .checkbox-row input {
+            margin-top: 3px;
+            accent-color: var(--orange-vibrant);
+            cursor: pointer;
         }
 
         /* Sliding Sheet Drawer */
@@ -459,13 +555,15 @@
             .hero-content { padding: 30px 15px; }
             .hero-buttons { flex-direction: column; gap: 12px; }
             .btn { width: 100%; }
+            .form-grid-2 { grid-template-columns: 1fr; gap: 0; }
             .cart-sidebar { width: 100%; right: -100%; }
+            .options-grid { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Grid with Image Logo Asset -->
+    <!-- Header Grid -->
     <header>
         <a href="#" class="logo-container">
             <img src="Untitled_design__1_-removebg-preview.png" alt="Crafty Duo Logo" class="header-logo">
@@ -481,7 +579,7 @@
         </div>
     </header>
 
-    <!-- Hero Frame Setup - Immersive Centered Cover Style -->
+    <!-- Hero Frame Setup -->
     <section class="hero">
         <div class="hero-content">
             <h1>Two Generations, One Passion</h1>
@@ -504,38 +602,209 @@
             </div>
         </section>
 
-        <!-- Custom Custom Workspace Form -->
+        <!-- Remodeled Custom Crochet Order Form Section[cite: 1] -->
         <section class="custom-order-section" id="custom">
-            <h2 class="section-title" style="text-align: center; margin-bottom: 10px;">Custom Order</h2>
-            <!-- <p style="text-align: center; font-size: 14px; color: var(--muted-light); opacity:0.8; max-width: 460px; margin: 0 auto 50px auto; line-height: 1.6;">
-                Configure structural blueprints, fiber densities, or unique gradient matching profiles below to submit your design matrix request.
-            </p> -->
+            <h2 class="section-title" style="text-align: center; margin-bottom: 30px;">Custom Crochet Order Form</h2>
 
             <div class="custom-form-container">
                 <form id="customForm" onsubmit="submitCustomOrder(event)">
-                    <div class="form-group">
-                        <label for="custom-item">Structural Frame Framework</label>
-                        <select id="custom-item" required>
-                            <option value="">-- Select Structural Category --</option>
-                            <option value="Plushie / Amigurumi">Amigurumi Art Object</option>
-                            <option value="Hat / Beanie / Bandana">Custom Structural Headwear</option>
-                            <option value="Bag / Tote">Studio Knit Tote Layout</option>
-                            <option value="Crochet Clothing">Custom Fine Apparel Form</option>
-                            <option value="Other / Unique Idea">Experimental Yarn Sculpture</option>
-                        </select>
+                    
+                    <!-- Part 1: Personal Details[cite: 1] -->
+                    <h3 class="form-subtitle">Personal Details</h3>
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label for="cust-name">Full Name *</label>
+                            <input type="text" id="cust-name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cust-phone">Phone Number *</label>
+                            <input type="text" id="cust-phone" placeholder="Enter mobile number" required>
+                        </div>
                     </div>
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label for="cust-email">Email Address (Optional)</label>
+                            <input type="email" id="cust-email" placeholder="name@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="cust-city">City & State *</label>
+                            <input type="text" id="cust-city" placeholder="e.g., Ahmedabad, Gujarat" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="cust-address">Delivery Address *</label>
+                        <textarea id="cust-address" rows="2" placeholder="Complete shipping address details..." required></textarea>
+                    </div>
+
+                    <!-- Part 2: Crochet Item Details[cite: 1] -->
+                    <h3 class="form-subtitle">Crochet Item Details</h3>
                     
                     <div class="form-group">
-                        <label for="custom-colors">Palette Hue Targets</label>
-                        <input type="text" id="custom-colors" placeholder="e.g., Crimson, coral pinks, gold trims" required>
+                        <label>1. What would you like to order? *</label>
+                        <div class="options-grid">
+                            <label class="option-card">
+                                <input type="radio" name="item_type" value="Plushie" onclick="toggleOtherInput(false)" required>
+                                <span class="option-label">Plushie</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="item_type" value="Keychain" onclick="toggleOtherInput(false)">
+                                <span class="option-label">Keychain</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="item_type" value="Flower Bouquet" onclick="toggleOtherInput(false)">
+                                <span class="option-label">Flower Bouquet</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="item_type" value="Doll" onclick="toggleOtherInput(false)">
+                                <span class="option-label">Doll</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="item_type" value="Bag" onclick="toggleOtherInput(false)">
+                                <span class="option-label">Bag</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="item_type" value="Home Decor" onclick="toggleOtherInput(false)">
+                                <span class="option-label">Home Decor</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="item_type" value="Wearable" onclick="toggleOtherInput(false)">
+                                <span class="option-label">Wearable</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="item_type" value="Other" id="item_type_other" onclick="toggleOtherInput(true)">
+                                <span class="option-label">Other</span>
+                            </label>
+                        </div>
+                        <div class="other-input-wrap" id="other-type-wrap">
+                            <input type="text" id="cust-type-other" placeholder="Specify your unique framework object here">
+                        </div>
+                    </div>
+
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label for="cust-name-char">2. Item Name / Character</label>
+                            <input type="text" id="cust-name-char" placeholder="e.g., Teddy Bear, Hello Kitty, Sunflower Bouquet">
+                        </div>
+                        <div class="form-group">
+                            <label for="cust-colors">Preferred Colors</label>
+                            <input type="text" id="cust-colors" placeholder="e.g., Pastel pink, lilac, mint green">
+                        </div>
+                    </div>
+
+                    <!-- Added Link Field Layer Integration[cite: 1] -->
+                    <div class="form-group">
+                        <label for="cust-img-link">Instagram Photo / Reference Link (Optional)[cite: 1]</label>
+                        <input type="text" id="cust-img-link" placeholder="Paste the link to our Instagram post or reference image[cite: 1]">
+                    </div>
+
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label>Approximate Size</label>
+                            <select id="cust-size">
+                                <option value="Small">Small</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Large">Large</option>
+                                <option value="Custom">Custom Spec</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Material Preference</label>
+                            <select id="cust-material">
+                                <option value="Cotton Yarn">Cotton Yarn</option>
+                                <option value="Velvet Yarn">Velvet Yarn</option>
+                                <option value="Acrylic Yarn">Acrylic Yarn</option>
+                                <option value="No Preference" selected>No Preference</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="custom-details">Configuration Spec Log</label>
-                        <textarea id="custom-details" rows="4" placeholder="Describe scaling profiles, pattern rules, or design elements..." required></textarea>
+                        <label>Personalization (Optional) - Would you like to add?</label>
+                        <div class="options-grid">
+                            <label class="option-card">
+                                <input type="radio" name="personalization" value="Name" onclick="togglePersText(true)">
+                                <span class="option-label">Name</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="personalization" value="Initials" onclick="togglePersText(true)">
+                                <span class="option-label">Initials</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="personalization" value="Date" onclick="togglePersText(true)">
+                                <span class="option-label">Date</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="personalization" value="Custom Message" onclick="togglePersText(true)">
+                                <span class="option-label">Custom Message</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="personalization" value="None" checked onclick="togglePersText(false)">
+                                <span class="option-label">None</span>
+                            </label>
+                        </div>
+                        <div class="other-input-wrap" id="pers-text-wrap">
+                            <input type="text" id="cust-pers-text" placeholder="Enter the text to be added">
+                        </div>
                     </div>
 
-                    <button type="submit" class="btn" style="width:100%; font-size:15px; padding: 16px;">Transmit Parameters to WhatsApp &nbsp;<i class="fab fa-whatsapp"></i></button>
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label for="cust-qty">Quantity (Number of Items)</label>
+                            <input type="number" id="cust-qty" value="1" min="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="cust-budget">Your Approximate Budget (₹)</label>
+                            <input type="text" id="cust-budget" placeholder="e.g., 500">
+                        </div>
+                    </div>
+
+                    <!-- Part 3: Delivery & Payment Details[cite: 1] -->
+                    <h3 class="form-subtitle">Delivery & Requirements</h3>
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label for="cust-date">Required By (📅 Date)</label>
+                            <input type="date" id="cust-date">
+                        </div>
+                        <div class="form-group">
+                            <label>Need Urgent Delivery?</label>
+                            <select id="cust-urgent">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Preferred Payment Method</label>
+                        <select id="cust-payment">
+                            <option value="UPI">UPI</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cust-notes">Additional Notes (Anything you'd like us to know?)</label>
+                        <textarea id="cust-notes" rows="3" placeholder="Reference details, special sizing requests, adjustments..."></textarea>
+                    </div>
+
+                    <!-- Terms checkbox grid structure[cite: 1] -->
+                    <div class="terms-container">
+                        <label class="checkbox-row">
+                            <input type="checkbox" id="term-1" required>
+                            <span>I understand that handmade crochet items require production time.</span>
+                        </label>
+                        <label class="checkbox-row">
+                            <input type="checkbox" id="term-2" required>
+                            <span>I agree that custom-made orders cannot be cancelled once work has started.</span>
+                        </label>
+                        <label class="checkbox-row">
+                            <input type="checkbox" id="term-3" required>
+                            <span>I understand that colors may vary slightly due to yarn availability.</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn" style="width:100%; font-size:15px; padding: 16px;">
+                        Transmit Parameters to WhatsApp &nbsp;<i class="fab fa-whatsapp"></i>
+                    </button>
                 </form>
             </div>
         </section>
@@ -559,7 +828,7 @@
 
     <!-- Footer Footnote -->
     <footer>
-        <p>&copy; 2026 Crafty Duo Studio.</p>
+        <p>&copy; 2026 Crafty Duo Studio. Layout aesthetics curated dynamically.</p>
         <div class="social-icons">
             <a href="https://www.instagram.com/_crafty.duo/" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
@@ -567,7 +836,7 @@
 
     <script>
         // CONFIGURATION: Set your active WhatsApp target number here
-        const WHATSAPP_NUMBER = "9054950680"; 
+        const WHATSAPP_NUMBER = "1234567890"; 
 
         const products = [
             { id: 1, name: "Rose Bouquet : Red", price: 15.00, img: "Looking for a gift that lasts forever Handmade Crochet Rose Bouquet ❤️ No wilting, no fading—ju.webp" },
@@ -636,6 +905,16 @@
             document.getElementById('cart-total-price').innerText = `$${totalPrice.toFixed(2)}`;
         }
 
+        function toggleOtherInput(show) {
+            document.getElementById('other-type-wrap').style.display = show ? 'block' : 'none';
+            if(show) document.getElementById('cust-type-other').setAttribute('required', 'true');
+            else document.getElementById('cust-type-other').removeAttribute('required');
+        }
+
+        function togglePersText(show) {
+            document.getElementById('pers-text-wrap').style.display = show ? 'block' : 'none';
+        }
+
         function checkoutViaWhatsApp() {
             if (cart.length === 0) {
                 alert("Your shopping bag is empty!");
@@ -653,20 +932,69 @@
             sendWhatsAppMessage(message);
         }
 
+        // Expanded Custom Serialization Engine[cite: 1]
         function submitCustomOrder(event) {
             event.preventDefault();
 
-            const itemType = document.getElementById('custom-item').value;
-            const colors = document.getElementById('custom-colors').value;
-            const details = document.getElementById('custom-details').value;
+            // Extract values[cite: 1]
+            const name = document.getElementById('cust-name').value;
+            const phone = document.getElementById('cust-phone').value;
+            const email = document.getElementById('cust-email').value || 'Not provided';
+            const location = document.getElementById('cust-city').value;
+            const address = document.getElementById('cust-address').value;
 
-            let message = "✨ *CUSTOM DESIGN LOG* ✨\n\n";
-            message += `🧵 *Framework Configuration:* ${itemType}\n`;
-            message += `🎨 *Selected Theme Targets:* ${colors}\n`;
-            message += `📝 *Spec Log Details:* ${details}\n\n`;
-            message += "Please analyze this configuration matrix and return verification/pricing details. Thank you!";
+            let itemType = document.querySelector('input[name="item_type"]:checked').value;
+            if (itemType === 'Other') {
+                itemType = `Other (${document.getElementById('cust-type-other').value})`;
+            }
 
-            sendWhatsAppMessage(message);
+            const itemName = document.getElementById('cust-name-char').value || 'Standard Configuration';
+            const colors = document.getElementById('cust-colors').value || 'No preference indicated';
+            const imgLink = document.getElementById('cust-img-link').value || 'No link provided[cite: 1]'; // Captures user pasted URL input
+            const size = document.getElementById('cust-size').value;
+            const material = document.getElementById('cust-material').value;
+
+            const persRadio = document.querySelector('input[name="personalization"]:checked').value;
+            let personalization = persRadio;
+            if (persRadio !== 'None') {
+                personalization += ` (Text: "${document.getElementById('cust-pers-text').value}")`;
+            }
+
+            const qty = document.getElementById('cust-qty').value;
+            const budget = document.getElementById('cust-budget').value ? `₹${document.getElementById('cust-budget').value}` : 'Open Parameter';
+            const dateReq = document.getElementById('cust-date').value || 'Flexible Timeline';
+            const urgent = document.getElementById('cust-urgent').value;
+            const payment = document.getElementById('cust-payment').value;
+            const notes = document.getElementById('cust-notes').value || 'None';
+
+            // Construct clearly indexed message blocks[cite: 1]
+            let msg = "🧶 *NEW CUSTOM CROCHET ORDER REQUEST* 🧶\n\n";
+            msg += "👤 *PERSONAL DETAILS*\n";
+            msg += `• Name: ${name}\n`;
+            msg += `• Phone: ${phone}\n`;
+            msg += `• Email: ${email}\n`;
+            msg += `• City/State: ${location}\n`;
+            msg += `• Address: ${address}\n\n`;
+            
+            msg += "🧵 *CROCHET ITEM DETAILS*\n";
+            msg += `• Item Class: ${itemType}\n`;
+            msg += `• Title/Character: ${itemName}\n`;
+            msg += `• Color Targets: ${colors}\n`;
+            msg += `• Reference Link: ${imgLink}\n[cite: 1]`; // Appends structural reference asset link
+            msg += `• Size Framework: ${size}\n`;
+            msg += `• Material Core: ${material}\n`;
+            msg += `• Personalization: ${personalization}\n`;
+            msg += `• Quantity: ${qty} item(s)\n`;
+            msg += `• Budget Frame: ${budget}\n\n`;
+
+            msg += "📅 *SHIPPING & TERMS*\n";
+            msg += `• Target Deadline: ${dateReq}\n`;
+            msg += `• Urgent Order Status: ${urgent}\n`;
+            msg += `• Payment Engine Preference: ${payment}\n`;
+            msg += `• Workspace Notes: ${notes}\n\n`;
+            msg += "✓ _All structural yarn processing constraints and craft creation design protocols explicitly checked and accepted._";
+
+            sendWhatsAppMessage(msg);
         }
 
         function sendWhatsAppMessage(text) {
